@@ -26,6 +26,7 @@ package hudson.plugins.promoted_builds.parameters;
 import com.sonyericsson.rebuild.RebuildParameterPage;
 import com.sonyericsson.rebuild.RebuildParameterProvider;
 import hudson.Extension;
+import hudson.model.ParameterDefinition;
 import hudson.model.ParameterValue;
 
 /**
@@ -42,11 +43,13 @@ public class PromotedBuildRebuildParameterProvider extends RebuildParameterProvi
      * @param value a value to be shown in a rebuild page.
      * @return page for the parameter value. null for parameter values cannot be handled.
      */
+
+    // Kenny, new getRebuildPage
     @Override
-    public RebuildParameterPage getRebuildPage(ParameterValue value) {
+    public RebuildParameterPage getRebuildPage(ParameterDefinition definition, ParameterValue value) {
         if (!(value instanceof PromotedBuildParameterValue)) {
             return null;
         }
-        return new RebuildParameterPage(PromotedBuildParameterValue.class, "value.jelly");
+        return new RebuildParameterPage(PromotedBuildParameterValue.class, "value.jelly", null);
     }
 }
