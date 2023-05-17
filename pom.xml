@@ -13,7 +13,7 @@
   <version>892.vd6219fc0a_efb.0</version>
   <packaging>hpi</packaging>
 
-  <name>Jenkins promoted builds plugin</name>
+  <name>[CNM]Jenkins promoted builds plugin</name>
   <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
 
   <properties>
